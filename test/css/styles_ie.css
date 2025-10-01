@@ -1,0 +1,14 @@
+/* CSS Document */
+
+.adjust {
+	margin: 22px 0 0 -100px;
+	/*position: relative;*/
+}
+
+ul.tabs a, ul.tabs a:visited {
+	padding: 7px 10px 7px 10px;
+}
+
+.groupHalf {
+	width: 48%;
+}

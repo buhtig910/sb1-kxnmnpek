@@ -1,0 +1,680 @@
+/********************************
+*
+* 1. General Page Styles
+* 2. Page Header Styles
+********************************/
+
+
+/*******************************
+* 
+* 1. General Page Styles
+*
+*******************************/
+body {
+	margin: 10px 0 0 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	background: #333;
+}
+body.popup {
+	margin: 0;
+}
+
+a.logo, a.logo:hover, a.logo:visited {
+	margin: 30px 0 0 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #FFF;
+	font-family: futura-pt;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 36px;
+	letter-spacing: .17em;
+	line-height: 1.5em;
+}
+
+p.logo {
+	margin: 5px 0 0 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	/*color: #5D0000;*/
+	font-family: futura-pt;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: .17em;
+	line-height: 1.5em;
+}
+
+/* default link style */
+a, a:visited {
+	color: #FFF;
+}
+a.white, a.white:visited {
+	color: #FFFFFF;
+}
+a.white:hover {
+	color: #B8B308;
+}
+
+/* link hover color */
+a:hover {
+	color: #FFF;
+}
+
+/* global paragraph style */
+p {
+	margin: 0 0px 20px 0px;
+}
+
+p.white {
+	color: #FFF;
+	font-size: 1px;
+}
+
+input, select, textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+input:read-only {
+	color: #FFF;
+}
+
+.button {
+	border: 1px solid #333;
+	background: #A3C2DE;
+	background: -moz-linear-gradient(#A3C2DE, #7b9dbb);
+    background: linear-gradient(#A3C2DE, #7b9dbb);
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0 10px 0 0;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+.buttonSmall, .buttonRed, .buttonGreen, .buttonBlue {
+	border: 1px solid #333;
+	background: #DDD;
+	background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0 10px 5px 0;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+.buttonRed {
+	background: #E29999;
+	background: -moz-linear-gradient(#E29999, #cf7373);
+    background: linear-gradient(#E29999, #cf7373);
+}
+.buttonGreen {
+	background: #AFD69E;
+	background: -moz-linear-gradient(#AFD69E, #8bb977);
+    background: linear-gradient(#AFD69E, #8bb977);
+}
+.buttonBlue {
+	background: #A3C2DE;
+	background: -moz-linear-gradient(#A3C2DE, #80a5c6);
+    background: linear-gradient(#A3C2DE, #80a5c6);
+}
+
+#pageContainer {
+	width: 1200px;
+	margin: 0 0 10px 0;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #666666;
+	border-radius: 8px;
+}
+#pageContainerPopup {
+	width: 100%;
+	margin: 0;
+	position: relative;
+}
+
+
+/*******************************
+*
+* 2. Page Header Styles
+* 
+*******************************/
+/* page header container */
+#pageHeader {
+	clear: both;
+	display: block;
+	height: 70px;
+	overflow: hidden;
+	/*background: url(../images/header_tile.gif) repeat-x;*/
+	border-bottom: 1px solid #FFF;
+}
+#pageHeaderPopup {
+	clear: both;
+	display: block;
+	height: 38px;
+	overflow: hidden;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #333333;
+	background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);
+}
+
+#loginFields {
+	float: right;
+	padding: 5px 10px 0 0;
+}
+.bottomAlign {
+	padding-top: 50px;
+}
+
+/* primary nav container */
+#primaryNav {
+	height: 27px;
+	/*background: #5D0000 url(../images/nav_tile.gif) repeat-x;*/
+	background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);
+	padding: 9px 0 0 15px;
+	text-align: left;
+	overflow: hidden;
+	border-bottom: 1px solid #FFF;
+}
+#primaryNav a, #primaryNav a:visited {
+	color: #FFF;
+	font-weight: bold;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0 10px;
+	float: left;
+}
+#primaryNav a:hover {
+	/*color: #0000FF;*/
+	text-decoration: underline;
+}
+#primaryNav a.selected, #primaryNav a.selected:visited {
+	text-decoration: underline;
+	color: #FFF;
+}
+#primaryNav .navRight {
+	float: right !important;
+}
+
+#subNavLeft {
+	overflow: hidden;
+	/*padding: 5px 0 0 15px;*/
+	margin: 0 10px;
+	/*background: url(../images/sub_nav_left.gif) no-repeat;*/
+}
+#subNavRight {
+	/*background: url(../images/sub_nav_right.gif) no-repeat right;*/
+}
+#subNav {
+	margin: 0 10px;
+	line-height: 32px;
+	background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);
+	height: 32px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+#subNav a, #subNav a:visited {
+	color: #FFF;
+	display: block;
+	float: left;
+	text-decoration: none;
+	width: 82px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;	
+}
+#subNav a:hover {
+	text-decoration: underline;
+}
+#subNav a.selected, #subNav a.selected:visited {
+	/*background: url(../images/sub_nav_sel.gif) no-repeat 0 7px;*/
+	text-decoration: underline;
+}
+
+
+/*************************************
+*
+* 4. Main Content Styles
+*
+**************************************/
+#mainContentWrapper {
+	/*background: url(../images/page_tile_middle.gif) repeat-y;*/
+	overflow: hidden;
+}
+#mainContentWrapperPopup {
+	/*background: url(../images/page_tile_middle.gif) repeat-y;*/
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#mainContent {
+	/*background: url(../images/content_bg.gif) no-repeat bottom;*/
+	padding: 10px 25px;
+}
+.mainContentPop {
+	padding: 10px 15px !important;
+}
+
+#contentContainer {
+	width: 530px;
+}
+
+#pageGraphic {
+	float: right;
+	margin-top: 35px;
+	width: 278px;
+	overflow: hidden;
+}
+#pageGraphic img {
+	margin-bottom: 20px;
+}
+.imageMask {
+	background: url(../images/Mask.gif) no-repeat;
+	position: absolute;
+	z-index: 20;
+	width: 278px;
+	height: 196px;
+}
+.imageMaskTall {
+	background: url(../images/VMask.gif) no-repeat;
+	position: absolute;
+	z-index: 20;
+	width: 278px;
+	height: 330px;
+}
+
+.clear {
+	clear: both;
+	height: 1px;
+}
+
+.adjust {
+	/*top: 200px;*/
+}
+
+/* page title style */
+h1 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+	margin: 0 0 15px 0;
+	text-transform: uppercase;
+}
+
+/* page title 2 */
+h2 {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
+/* page title 3 */
+h3 {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	/*color: #333333;*/
+	margin: 0;
+}
+
+h3.italic {
+	font-style: italic;
+}
+h3 a {
+	text-decoration: none;
+}
+
+#mainContent ul {
+	margin: 5px 0px 0px 15px;
+	padding: 0px;
+}
+
+#mainContent ul li {
+	margin: 0px 0px 10px 0px;
+}
+
+.center {
+	vertical-align: middle;
+}
+
+.quote {
+	background: #CCCCCC;
+	border-top: 2px solid #666666;
+	padding: 10px 20px;
+	font-weight: bold;
+	line-height: 20px;
+}
+.quoteAttrib {
+	font-weight: normal;
+	font-style: italic;
+	margin: 10px 0 0 300px;
+}
+
+.bold {
+	font-size: 14px;
+	font-weight: bold;
+}
+.italic {
+	font-style: italic;
+}
+
+.rule {
+	height: 3px;
+	border-bottom: 1px solid #75CBDE;
+	margin-bottom: 18px;
+}
+
+.confirmMessage {
+	padding: 5px;
+	font-weight: bold;
+	color: #3C9636;
+	background: #DFFEDD;
+	border: 1px solid #3C9636;
+}
+.errorMessage {
+	padding: 5px;
+	font-weight: bold;
+	color: #E03636;
+	background: #FFCACA;
+	border: 1px solid #E03636;
+}
+.warningMessage {
+	padding: 5px;
+	font-weight: bold;
+	color: #E76D00;
+	background: #FFE5AE;
+	border: 1px solid #E76D00;
+}
+
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+
+.controlBar {
+	/*height: 25px;*/
+	min-height: 25px;
+	overflow: hidden;
+	padding-top: 5px;
+	line-height: 24px;
+}
+.controlBarSpacer {
+	width: 60px;
+	height: 20px;
+	float: left;
+}
+
+.tight {
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+
+/************************************
+* 
+* 5. Form Styles
+*
+************************************/
+form {
+	padding: 0;
+	margin: 0;
+}
+
+/* field label style */
+.fieldLabel {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* legend container for required field marks */
+#requireFieldLegend {
+	float: right;
+	font-size: 10px;
+	color: #666666;
+}
+
+/* style for red asterisks (*) on field labels */
+.requiredField {
+	font-weight: normal;
+	color: #FF0000;
+	font-size: 12px;
+}
+
+
+/* style for notation/help text */
+.note {
+	font-size: 10px;
+	color: #666666;
+}
+
+.fieldGroup {
+	border: 1px solid #333333;
+	background: #666;
+	margin-bottom: 15px;
+}
+.groupHalf {
+	float: left;
+	width: 48.8%;
+}
+.groupHeader {
+	padding: 3px;
+	background: #333333;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.groupContent {
+	padding: 10px;
+	position: relative;
+}
+
+.spacer {
+	width: 25px;
+}
+
+.tradeFilters {
+	padding: 5px;
+	/*width: 810px;*/
+	background: #666 /*url(../images/filters_bg.gif) repeat-x top*/;
+	border: 1px solid #666666;
+	border-radius: 8px;
+	margin: 5px 0 10px 0;
+}
+
+#cal1Container, #cal2Container, #cal3Container, #cal4Container {
+	display: none; 
+	position: absolute; 
+	z-index: 5;
+}
+
+.dataTable {
+	border: 1px solid #AAA;
+	border-collapse: collapse;
+	font-size: 11px;
+	width: 100%;
+}
+.dataTable th {
+	background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);
+	padding: 5px;
+	font-size: 12px;
+	border-right: 1px solid #AAA;
+}
+.dataTable th a, .dataTable th a:visited {
+	color: #FFF;
+}
+.dataTable th a:hover {
+	text-decoration: none;
+}
+.dataTable th.sort {
+	/*background: -moz-linear-gradient(#333, #b0afaf);
+    background: linear-gradient(#333, #b0afaf);*/
+	padding-right: 0;
+}	
+.dataTable td {
+	padding: 3px 5px;
+	border: 1px solid #AAA;
+}
+tr.evenRow td {
+	background: #555;
+}
+tr.highlight td {
+	background: #999;
+}
+tr.unsettled td, .unsettled {
+	font-weight: bold;
+}
+tr.unsettled:nth-child(odd) {
+	background: #555;
+}
+
+tr.hiddenRow {
+    display: none;
+}
+
+.scrollable {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: 1px solid #AAA;
+}
+
+.readonly {
+	border: none;
+	background: transparent;
+}
+
+.fieldError {
+	background: #FFC8CE;
+}
+
+.dynamicResult {
+	position: absolute;
+	background: #FFF6BC;
+	border: 1px solid #666666;
+	clear: both;
+	width: auto;
+}
+.dynamicResult div {
+	border-bottom: 1px solid #999999;
+	cursor: pointer;
+	padding: 2px 3px;
+}
+.dynamicResult div:hover {
+	background:#890C0C;
+	color: #FFF;
+}
+
+
+/**********
+* tabs
+**********/
+ul.tabs {
+	margin: 25px 0 0 0;
+	padding: 0px;
+	/*position: relative;*/
+	z-index: 10;
+	display: block;
+}
+
+ul.tabs li {
+	display: inline;
+	margin: 0 5px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.tabs a, ul.tabs a:visited {
+	color: #000;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	padding: 7px 10px 7px 10px;
+	margin-right: 5px;
+	border: 1px solid #333333;
+	background: #DBDBDB;
+}
+
+ul.tabs a:hover {
+	color: #000;
+	background: #C1E0FF; /* CCCCCC */
+}
+
+ul.tabs a.selected, ul.tabs a.selected:visited {
+	color: #000;
+	border: 1px solid #333;
+	border-bottom: 1px solid #FFF;
+	background: #FFF;
+}
+
+ul.list {
+	margin: 10px 0px 0px 50px;
+	padding: 0px;
+}
+
+ul.list li {
+	margin: 0px 0px 5px 0px;
+	padding: 0px;
+	list-style: url(../images/list_bullet.gif);
+}
+
+#tabsContent {
+	border: 1px solid #333333;
+	padding: 10px 5px 10px 5px;
+	margin: 7px 0 10px 0;
+	clear: both;
+}
+
+/***********************************
+*
+* 9. Page Footer
+*
+************************************/
+/* page footer container element */
+#pageFooter {
+	clear: both;
+	height: 28px;
+	line-height: 28px;
+	margin: 10px 0 0 0;
+	text-align: center;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+#contentBottom {
+	height: 27px;
+	/*background: url(../images/page_bottom.gif) no-repeat;*/
+	overflow: hidden;
+}
+
+/* page footer link color */
+#pageFooter a, #pageFooter a:visited {
+	text-decoration: none;
+}
+
+/* page footer link rollover color */
+#pageFooter a:hover {
+	text-decoration: underline;
+}
+
+/* vertical pipe divider between footer links */
+#pageFooter .pipe {
+	color: #FFF;
+}
+
+
+
