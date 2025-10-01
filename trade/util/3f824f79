@@ -1,0 +1,155 @@
+<?php
+session_start();
+
+require_once("../vars.inc.php");
+require_once("../functions.php");
+
+
+$action = $_POST["action"];
+$addBroker = $_POST["addBroker"];
+$block = $_POST["block"];
+$blocks = $_POST["blocks"];
+$brokerCount = $_POST["brokerCount"];
+$brokerID = $_POST["brokerID"];
+$brokerType = $_POST["brokerType"];
+$brokerComm = $_POST["brokerComm"];
+$brokerRate = $_POST["brokerRate"];
+$brokerType = $_POST["brokerType"];
+$blockID = $_POST["blockID"];
+$blockRegion = $_POST["blockRegion"];
+$buy = $_POST["buy"];
+$calculate = $_POST["calculate"];
+$clientID = $_POST["clientID"];
+$customHours = $_POST["customHours"];
+if(isset($_GET["companyID"]))
+	$companyID = $_GET["companyID"];
+else
+	$companyID = $_POST["companyID"];
+$dayType = $_POST["dayType"];
+
+if(isset($_GET["endDate"]))
+	$endDate = $_GET["endDate"];
+else
+	$endDate = $_POST["endDate"];
+	
+$endHour = $_POST["endHour"];
+$existing = $_POST["existing"];
+$filter = $_POST["filter"];
+$freq = $_POST["freq"];
+$getBrokers = $_POST["getBrokers"];
+if(isset($_GET["getClientList"]))
+	$getClientList = $_GET["getClientList"];
+else
+	$getClientList = $_POST["getClientList"];
+$geoRegion = $_POST["geoRegion"];
+$hubName = $_GET["hubName"];
+$indices = $_GET["indices"];
+$indexName = $_POST["indexName"];
+$indexType = $_POST["indexType"];
+$locationID = $_POST["locationID"];
+$param = $_POST["param"];
+$qty = $_POST["qty"];
+$region = $_POST["region"];
+$reportName = $_GET["reportName"];
+if(isset($_POST["resendConfirm"]))
+	$resendConfirm = $_POST["resendConfirm"];
+else
+	$resendConfirm = $_GET["resendConfirm"];
+if(isset($_POST["resendType"]))
+	$resendType = $_POST["resendType"];
+else
+	$resendType = $_GET["resendType"];
+$selectedBroker = $_POST["selectedBroker"];
+$sendInvoice = $_POST["sendInvoice"];
+if(isset($_GET["searchCompany"]))
+	$searchCompany = $_GET["searchCompany"];
+else
+	$searchCompany = $_POST["searchCompany"];
+if(isset($_GET["searchString"]))
+	$searchString = $_GET["searchString"];
+else
+	$searchString = $_POST["searchString"];
+$showClearID = $_POST["showClearID"];
+if(isset($_GET["startDate"]))
+	$startDate = $_GET["startDate"];
+else
+	$startDate = $_POST["startDate"];
+$startHour = $_POST["startHour"];
+$timezone = $_POST["timezone"];
+if(isset($_POST["tradeID"]))
+	$tradeID = $_POST["tradeID"];
+else
+	$tradeID = $_GET["tradeID"];
+$transactionID = $_POST["transactionID"];
+$transID = $_POST["transID"];
+$type = $_POST["type"];
+
+
+if(isset($param)){
+	//get company information
+	$query = "SELECT fldCompanyName,fldConfirmStreet,fldConfirmStreet2,fldConfirmCity,fldConfirmState,fldConfirmZip,fldConfirmPhone,fldConfirmFax FROM $tblClient WHERE pkClientID=$param";
+	//echo($query);
+	$result = mysqli_query($_SESSION['db'],$query);
+	@$count = mysqli_num_rows($result);
+	
+	if($count == 1){
+		$resultSet = mysqli_fetch_row($result);
+		/*
+		0 = company anem
+		1 = street1
+		2 = street2
+		3 = city
+		4 = state
+		5 = zip
+		6 = phone
+		7 = fax
+		*/
+		
+		$address = $resultSet[1];
+		if($resultSet[2] != "")
+			$address .= ", " .$resultSet[2];
+		$address .= ", ". $resultSet[3];
+		$address .= ", ". $resultSet[4];
+		$address .= ", ".$resultSet[5];
+		
+		echo("$resultSet[0]\t\n");
+		echo("$address\t\n");
+		echo("$resultSet[6]\t\n");
+		echo("$resultSet[7]\t\n");
+		
+	}
+}
+else if(isset($existing)) { 
+	//get existing client information by client ID
+	$query = "SELECT * FROM tblB2TClient WHERE pkClientID=".$clientID;
+	$result = mysqli_query($_SESSION['db'],$query);
+	@$count = mysqli_num_rows($result);
+	
+	if($count == 1){
+		$resultSet = mysqli_fetch_row($result);
+		for($i=0; $i < sizeof($resultSet); $i++){
+			echo($resultSet[$i]."\t\n");
+		}
+	}
+	else{
+		echo("no records found");
+	}
+}
+else if(isset($region)){
+	
+	$query = "SELECT fldRegion,fldTimezone FROM $tblLocation WHERE pkLocationID=$region";
+	$result = mysqli_query($_SESSION['db'],$query);
+	@$count = mysqli_num_rows($result);
+	
+	if($count == 1){
+		$resultSet = mysqli_fetch_row($result);
+		/*
+		0 = region name
+		1 = timezone
+		*/
+		
+		echo("$resultSet[0]\t$resultSet[1]\t$geo");
+		
+	}
+}
+else

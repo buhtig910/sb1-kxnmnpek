@@ -1,0 +1,72 @@
+PDF STRUCTURE DIAGRAM - Trade Confirmation
+==========================================
+
+HEADER SECTION
+--------------
+┌─────────────────────────────────────────────────────────────┐
+│ GREENLIGHT COMMODITIES                    Bosworth Brokers LLC│
+│                              dba Greenlight Commodities     │
+│                              5535 Memorial Drive, Suite F453│
+│                              Houston, TX 77007-8009         │
+│                              Tel: 561-339-4032              │
+└─────────────────────────────────────────────────────────────┘
+
+BROKER CONFIRMATION (centered)
+
+BILL TO SECTION
+---------------
+┌─────────────────────────────────────────────────────────────┐
+│ Bill To: [Company Name]                                     │
+│ [Address Line 1]                                            │
+│ [Address Line 2] (if exists)                               │
+│ [City, State Zip]                                           │
+└─────────────────────────────────────────────────────────────┘
+
+TRADE INFO
+----------
+Trade Date: [Date]
+Confirm #: [Number]
+
+"We are pleased to confirm the following trade:"
+
+COMPANY SECTIONS (Two Column Layout)
+====================================
+
+LEFT SIDE (Buying Company)          RIGHT SIDE (Selling Company)
+─────────────────────────          ───────────────────────────
+Buying Company: [Name]             Selling Company: [Name]
+Trader: [Trader Name]              Trader: [Trader Name]
+ID#: [ICE ID] (if ICE CLEARED)     ID#: [ICE ID] (if ICE CLEARED)
+Address: [Street Address]          Address: [Street Address]
+         [City, State Zip]                  [City, State Zip]
+Tel:     [Phone Number]            Tel:     [Phone Number]
+
+TRADE DETAILS SECTION
+=====================
+Product Group: [Group]
+Product Type: [Type]
+Location: [Location]
+Buyer Price: [Price]
+Currency: [Currency]
+Start Date: [Date]
+End Date: [Date]
+Unit Quantity: [Quantity]
+Unit Frequency: [Frequency]
+Total Quantity: [Total]
+
+BALANCE DUE
+===========
+Balance Due: [Amount]
+
+FOOTER
+======
+"If any questions, contact the Confirmation Dept at 561-339-4032"
+
+[Legal Disclaimer Text]
+
+CURRENT ISSUES IDENTIFIED:
+==========================
+1. "Trader: ICE CLEARED" appearing on wrong side (left instead of right)
+2. Address formatting not properly indented
+3. Missing telephone numbers in some cases
+4. ICE ID appearing under wrong company section

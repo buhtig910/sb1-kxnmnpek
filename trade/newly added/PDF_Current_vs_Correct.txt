@@ -1,0 +1,53 @@
+CURRENT PDF ISSUES vs CORRECT FORMAT
+====================================
+
+CURRENT (WRONG) FORMAT:
+=======================
+┌─────────────────────────────────────────────────────────────┐
+│ Buying Company: Citigroup Energy Inc.                      │
+│ Trader: Samuel Pleus                                       │
+│ Trader: ICE CLEARED          ← WRONG! Should be on right   │
+│ ID#: 23000005773280         ← WRONG! Should be on right    │
+│ Address: 2700 Post Oak Blvd                                │
+│          Houston, TX 77056                                 │
+│ Tel:      [missing]                                        │
+└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│ Selling Company: ICE CLEARED                               │
+│ Trader: [empty]             ← WRONG! Should show ICE CLEARED│
+│ ID#: [missing]              ← WRONG! Should show ID        │
+│ Address: [missing]          ← WRONG! Should show address   │
+└─────────────────────────────────────────────────────────────┘
+
+CORRECT FORMAT:
+===============
+┌─────────────────────────────────────────────────────────────┐
+│ Buying Company: Citigroup Energy Inc.                      │
+│ Trader: Samuel Pleus                                       │
+│ Address: 2700 Post Oak Blvd                                │
+│          Houston, TX 77056                                 │
+│ Tel:      [phone number]                                   │
+└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│ Selling Company: ICE CLEARED                               │
+│ Trader: ICE CLEARED                                        │
+│ ID#: 23000005773280                                        │
+└─────────────────────────────────────────────────────────────┘
+
+KEY PROBLEMS:
+=============
+1. ICE CLEARED trader info is on the LEFT side (buying company) instead of RIGHT side (selling company)
+2. ICE ID is on the LEFT side instead of RIGHT side
+3. Selling company side is mostly empty when it should have ICE CLEARED info
+4. Address formatting is broken (not properly indented)
+5. Telephone numbers are missing
+
+ROOT CAUSE:
+===========
+The database has the buyer and seller IDs swapped, so:
+- $resultSet[5] (buyer ID) points to ICE CLEARED
+- $resultSet[6] (seller ID) points to Citigroup Energy Inc.
+
+But it should be:
+- $resultSet[5] (buyer ID) points to Citigroup Energy Inc.
+- $resultSet[6] (seller ID) points to ICE CLEARED
